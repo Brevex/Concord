@@ -34,6 +34,12 @@ std::string Usuario::getServidorAtual()
     return servidorAtual;
 }
 
+// Getters - canalAtual
+std::string Usuario::getCanalAtual()
+{
+    return canalAtual;
+}
+
 // Setters - id
 void Usuario::setId(int id_m)
 {
@@ -62,4 +68,10 @@ void Usuario::setSenha(std::string senha_m)
 void Usuario::setServidorAtual(std::string servidorAtual_m)
 {
     servidorAtual = servidorAtual_m;
+}
+
+// Setters - canalAtual
+void Usuario::setCanalAtual(std::string canalAtual_m)
+{
+    canalAtual = canalAtual_m;
 }

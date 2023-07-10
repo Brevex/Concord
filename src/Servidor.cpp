@@ -27,16 +27,62 @@ std::string Servidor::getCodigoConvite()
     return codigoConvite;
 }
 
-// Getters - canaisTexto
-std::vector<Canal*> Servidor::getCanais()
-{
-    return canais;
-}
-
 // Getters - participantesIds
 std::vector<int> Servidor::getParticipantesIds()
 {
     return participantesIds;
+}
+
+// Getters - canaisTexto
+std::vector<Canal*> Servidor::getCanaisTexto()
+{
+    std::vector<Canal*> canaisTexto;
+
+    for (int i = 0; i < canais.size(); i++)
+    {
+        if (canais[i] -> getTipo() == 1)
+        {
+            canaisTexto.push_back(canais[i]);
+        }
+    }
+
+    return canaisTexto;
+}
+
+// Getters - canaisVoz
+std::vector<Canal*> Servidor::getCanaisVoz()
+{
+    std::vector<Canal*> canaisVoz;
+
+    for (int i = 0; i < canais.size(); i++)
+    {
+        if (canais[i] -> getTipo() == 2)
+        {
+            canaisVoz.push_back(canais[i]);
+        }
+    }
+
+    return canaisVoz;
+}
+
+// Getters - canais
+Canal* Servidor::getCanal(std::string nome)
+{
+    for (int i = 0; i < canais.size(); i++)
+    {
+        if (canais[i] -> getNome() == nome)
+        {
+            return canais[i];
+        }
+    }
+
+    return nullptr;
+}
+
+// Getters - canais
+std::vector<Canal*> Servidor::getCanais()
+{
+    return canais;
 }
 
 // Setters - UsuarioDonoId
@@ -79,4 +125,16 @@ void Servidor::setParticipantesIds(std::vector<int> participantesIds_m)
 void Servidor::adicionarParticipante(int id)
 {
     participantesIds.push_back(id);
+}
+
+// Métodos - adicionarCanalTexto
+void Servidor::adicionarCanalTexto(Canal* canal)
+{
+    canais.push_back(canal);
+}
+
+// Métodos - adicionarCanalVoz
+void Servidor::adicionarCanalVoz(Canal* canal)
+{
+    canais.push_back(canal);
 }

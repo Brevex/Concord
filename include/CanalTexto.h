@@ -1,8 +1,6 @@
 #ifndef CANALTEXTO_H
 #define CANALTEXTO_H
 
-#include <vector>
-
 #include "Canal.h"
 #include "Mensagem.h"
 
@@ -11,6 +9,7 @@ class CanalTexto : public Canal
     private:
 
         std::vector<Mensagem> mensagens;
+        int tipo;
 
     public:
 

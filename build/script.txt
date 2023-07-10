@@ -1,0 +1,55 @@
+create-user breno@email.com a23p00# Breno-Barbosa
+create-user luiz@email.com 002ajk1 Luiz-Avelino
+create-user breno@email.com ijk092l Carlos
+listar-usuarios
+create-user carlinhos@email.com ijk092l Carlos
+listar-usuarios
+login emailErrado@email.com a23p00#
+login breno@email.com senhaErrada1 
+login breno@email.com a23p00#
+disconnect
+disconnect
+login breno@email.com a23p00#
+create-server Turma-BTI
+create-server Turma-BTI
+set-server-desc Turma-BTI "Servidor da turma do BTI"
+set-server-desc Turma-BCT "Servidor da turma do BCT"
+set-server-invite-code Turma-BTI 1234
+set-server-invite-code Turma-BTI
+set-server-invite-code Turma-BTI 4321
+create-server league-of-legends
+create-server Warcraft
+create-server Reuniao
+list-servers
+remove-server Reuniao
+list-servers
+remove-server rpg
+enter-server Turma-BTI
+leave-server
+leave-server
+disconnect
+login luiz@email.com 002ajk1
+enter-server Turma-BTI
+enter-server Turma-BTI 4321
+disconnect
+login carlinhos@email.com ijk092l
+enter-server Turma-BTI 1234
+enter-server Turma-BTI 4321
+disconnect
+login breno@email.com a23p00#
+enter-server Turma-BTI
+list-participants
+create-channel bate-dedo texto
+create-channel bate-dedo texto
+create-channel bate-bico voz
+create-channel bate-bico voz
+list-channels
+enter-channel bate-dedo
+send-message Saudacoes
+leave-channel
+disconnect
+quit
+
+
+
+

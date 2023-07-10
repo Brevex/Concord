@@ -3,7 +3,8 @@
 
 #include <vector>
 
-#include "Canal.h"
+#include "CanalTexto.h"
+#include "CanalVoz.h"
 
 class Servidor
 {
@@ -26,8 +27,13 @@ class Servidor
         std::string getNome();
         std::string getDescricao();
         std::string getCodigoConvite();
-        std::vector<Canal*> getCanais();
         std::vector<int> getParticipantesIds();
+
+        // Getters - Canais
+        std::vector<Canal*> getCanaisTexto();
+        std::vector<Canal*> getCanaisVoz();
+        std::vector<Canal*> getCanais();
+        Canal* getCanal(std::string nome);
 
         // Setters
         void setUsuarioDonoId(int UsuarioDonoId_m);
@@ -39,6 +45,8 @@ class Servidor
 
         // Métodos
         void adicionarParticipante(int id);
+        void adicionarCanalTexto(Canal* canal);
+        void adicionarCanalVoz(Canal* canal);
 };
 
 #endif
