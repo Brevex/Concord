@@ -1,7 +1,7 @@
 #include "../include/CanalVoz.h"
 
 // Construtor da classe CanalVoz, cria objeto usando lista de inicialização
-CanalVoz::CanalVoz(std::string nome_m) : Canal(nome_m) {}
+CanalVoz::CanalVoz(std::string nome_m) : Canal(nome_m), tipo(2) {}
 
 // Getters - Ultima Mensagem
 Mensagem CanalVoz::getUltimaMensagem()

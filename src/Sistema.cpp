@@ -25,7 +25,12 @@ void Sistema::executar(std::string linhaComando)
         {"remove-server", [this](std::vector<std::string> params) { removerServidor(params); }},
         {"enter-server", [this](std::vector<std::string> params) { entrarServidor(params); }},
         {"leave-server", [this](std::vector<std::string> params) { desconectarDoServidor(); }},
-        {"list-participants", [this](std::vector<std::string> params) { listarParticipantes(); }}
+        {"list-participants", [this](std::vector<std::string> params) { listarParticipantes(); }},
+        {"list-channels", [this](std::vector<std::string> params) { listarCanais(); }},
+        {"create-channel", [this](std::vector<std::string> params) { criarCanal(params); }},
+        {"enter-channel", [this](std::vector<std::string> params) { entrarCanal(params); }},
+        {"leave-channel", [this](std::vector<std::string> params) { sairCanal(); }},
+        {"send-message", [this](std::vector<std::string> params) { enviarMensagem(params); }}
     };
 
     // Verifica se o comando digitado é válido
@@ -69,7 +74,7 @@ void Sistema::criarUsuario(std::vector<std::string> parametros)
         if (usuario.getEmail() == email)
         {
             std::cout << std::endl;
-            std::cout << " Usuario ja existe!" << std::endl;
+            std::cout << " Usuario " << usuario.getEmail() << " ja existe!" << std::endl;
 
             return;
         }
@@ -84,7 +89,7 @@ void Sistema::criarUsuario(std::vector<std::string> parametros)
 
     // Exibe mensagem de sucesso
     std::cout << std::endl;
-    std::cout << " Usuario criado com sucesso" << std::endl;
+    std::cout << " Usuario " << novoUsuario.getEmail() << " criado com sucesso" << std::endl;
 }
 
 // Comando para fazer login com um usuário existente
@@ -198,7 +203,7 @@ void Sistema::criarServidor(std::vector<std::string> parametros)
         if (servidor.getNome() == nomeServidor)
         {
             std::cout << std::endl;
-            std::cout << " Servidor ja existe" << std::endl;
+            std::cout << " Servidor '" << servidor.getNome() << "' ja existe!" << std::endl;
 
             return;
         }
@@ -209,7 +214,7 @@ void Sistema::criarServidor(std::vector<std::string> parametros)
     servidores.push_back(novoServidor);
 
     std::cout << std::endl;
-    std::cout << " Servidor criado com sucesso" << std::endl;
+    std::cout << " Servidor '" << novoServidor.getNome() << "' criado com sucesso" << std::endl;
 }
 
 // Comando para mudar descrição do servidor
@@ -463,7 +468,7 @@ void Sistema::entrarServidor(std::vector<std::string> parametros)
         usuarioLogado.setServidorAtual(nomeServidor);
 
         std::cout << std::endl;
-        std::cout << " Entrou no servidor com sucesso" << std::endl;
+        std::cout << " Entrou no servidor '" << nomeServidor << "' com sucesso" << std::endl;
 
         return;
     }
@@ -476,7 +481,7 @@ void Sistema::entrarServidor(std::vector<std::string> parametros)
         usuarioLogado.setServidorAtual(nomeServidor);
 
         std::cout << std::endl;
-        std::cout << " Entrou no servidor com sucesso" << std::endl;
+        std::cout << " Entrou no servidor '" << nomeServidor << "' com sucesso" << std::endl;
 
         return;
     }
@@ -489,13 +494,13 @@ void Sistema::entrarServidor(std::vector<std::string> parametros)
         usuarioLogado.setServidorAtual(nomeServidor);
 
         std::cout << std::endl;
-        std::cout << " Entrou no servidor com sucesso" << std::endl;
+        std::cout << " Entrou no servidor '" << nomeServidor << "' com sucesso" << std::endl;
 
         return;
     }
 
     std::cout << std::endl;
-    std::cout << " Servidor requer codigo de convite" << std::endl;
+    std::cout << " Servidor '" << nomeServidor << "' requer codigo de convite" << std::endl;
 }
 
 // Comando para sair de um servidor
@@ -573,6 +578,7 @@ void Sistema::listarParticipantes()
 
     std::cout << std::endl;
     std::cout << " Participantes do servidor '" << nomeServidor << "':" << std::endl;
+    std::cout << std::endl;
 
     // Percorre o vetor de participantes do servidor e imprime seus nomes
     for (auto& id : servidor -> getParticipantesIds())
@@ -586,6 +592,338 @@ void Sistema::listarParticipantes()
             }
         }
     }
+}
+
+// Comando para listar Canais do servidor atual
+void Sistema::listarCanais()
+{
+    // Verifica se existe algum usuário logado
+    if (usuarioLogado.getEmail() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nenhum usuario logado" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está visualizando algum servidor
+    if (usuarioLogado.getServidorAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta visualizando nenhum servidor" << std::endl;
+
+        return;
+    }
+
+    // Define o servidor atual do usuário logado
+    std::string nomeServidor = usuarioLogado.getServidorAtual();
+    Servidor* servidor = nullptr;
+
+    // Percorre o vetor de servidores cadastrados
+    for (auto& s : servidores)
+    {
+        if (s.getNome() == nomeServidor)
+        {
+            servidor = &s;
+            break;
+        }
+    }
+
+    // Verifica se o servidor existe
+    if (servidor == nullptr)
+    {
+        std::cout << std::endl;
+        std::cout << " Servidor '" << nomeServidor << "' nao encontrado" << std::endl;
+
+        return;
+    }
+
+    std::cout << " #Canais de texto:" << std::endl;
+    std::cout << std::endl;
+
+    // Percorre o vetor de canais de texto do servidor e imprime seus nomes
+    for (auto& c : servidor -> getCanaisTexto())
+    {
+        std::cout << " - " << c -> getNome() << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << " #Canais de voz:" << std::endl;
+    std::cout << std::endl;
+
+    // Percorre o vetor de canais de voz do servidor e imprime seus nomes
+    for (auto& c : servidor -> getCanaisVoz())
+    {
+        std::cout << " - " << c -> getNome() << std::endl;
+    }
+
+    std::cout << std::endl;
+}
+
+// Comando para criar um canal no servidor
+void Sistema::criarCanal(std::vector<std::string> parametros)
+{
+    // Verifica se o número de parametros do comando foi digitado corretamente
+    if (parametros.size() != 2)
+    {
+        std::cout << std::endl;
+        std::cout << " Comando invalido" << std::endl;
+
+        return;
+    }
+
+    // Distribui os parametros do comando em variáveis
+    std::string nomeCanal = parametros[0];
+    std::string tipoCanal = parametros[1];
+
+    // Verifica se existe algum usuário logado
+    if (usuarioLogado.getEmail() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nenhum usuario logado" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está visualizando algum servidor
+    if (usuarioLogado.getServidorAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta visualizando nenhum servidor" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o nome do canal é válido
+    if (nomeCanal == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nome do canal nao pode ser vazio" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o tipo do canal é válido
+    if (tipoCanal != "texto" && tipoCanal != "voz")
+    {
+        std::cout << std::endl;
+        std::cout << " Tipo de canal invalido" << std::endl;
+
+        return;
+    }
+
+    // Define o servidor atual do usuário logado
+    std::string nomeServidor = usuarioLogado.getServidorAtual();
+
+    // Percorre o vetor de servidores cadastrados
+    for (auto& s : servidores)
+    {
+        if (s.getNome() == nomeServidor)
+        {
+            // Verifica se o canal já existe
+            if (s.getCanal(nomeCanal) != nullptr)
+            {
+                std::cout << std::endl;
+                std::cout << " Canal '" << nomeCanal << "' ja existe" << std::endl;
+
+                return;
+            }
+
+            // Cria o canal de texto
+            if (tipoCanal == "texto")
+            {
+                CanalTexto* canal = new CanalTexto(nomeCanal);
+                s.adicionarCanalTexto(canal);
+
+                std::cout << std::endl;
+                std::cout << " Canal de texto '" << nomeCanal << "' criado com sucesso" << std::endl;
+
+                return;
+            }
+
+            // Cria o canal de voz
+            if (tipoCanal == "voz")
+            {
+                CanalVoz* canal = new CanalVoz(nomeCanal);
+                s.adicionarCanalVoz(canal);
+
+                std::cout << std::endl;
+                std::cout << " Canal de voz '" << nomeCanal << "' criado com sucesso" << std::endl;
+
+                return;
+            }
+        }
+    }
+}
+
+// Comando para entrar em um canal do servidor
+void Sistema::entrarCanal(std::vector<std::string> parametros)
+{
+    // Verifica se o número de parametros do comando foi digitado corretamente
+    if (parametros.size() != 1)
+    {
+        std::cout << std::endl;
+        std::cout << " Comando invalido" << std::endl;
+
+        return;
+    }
+
+    // Verifica se existe algum usuário logado
+    if (usuarioLogado.getEmail() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nenhum usuario logado" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está visualizando algum servidor
+    if (usuarioLogado.getServidorAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta visualizando nenhum servidor" << std::endl;
+
+        return;
+    }
+
+    // Distribui o parametro do comando em uma variável
+    std::string nomeCanal = parametros[0];
+
+    // Define o servidor atual do usuário logado
+    std::string nomeServidor = usuarioLogado.getServidorAtual();
+
+    // Percorre o vetor de servidores cadastrados
+    for (auto& s : servidores)
+    {
+        if (s.getNome() == nomeServidor)
+        {
+            // Verifica se o canal existe
+            if (s.getCanal(nomeCanal) == nullptr)
+            {
+                std::cout << std::endl;
+                std::cout << " Canal '" << nomeCanal << "' nao encontrado" << std::endl;
+
+                return;
+            }
+
+            // Define o canal atual do usuário logado
+            usuarioLogado.setCanalAtual(nomeCanal);
+
+            std::cout << std::endl;
+            std::cout << " Entrou no canal '" << nomeCanal << "'" << std::endl;
+
+            return;
+        }
+    }
+}
+
+// Comando para sair de um canal do servidor
+void Sistema::sairCanal()
+{
+    // Verifica se existe algum usuário logado
+    if (usuarioLogado.getEmail() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nenhum usuario logado" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está visualizando algum servidor
+    if (usuarioLogado.getServidorAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta visualizando nenhum servidor" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está em algum canal
+    if (usuarioLogado.getCanalAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta em nenhum canal" << std::endl;
+
+        return;
+    }
+
+    // Define o canal atual do usuário logado
+    usuarioLogado.setCanalAtual("");
+
+    std::cout << std::endl;
+    std::cout << " Saindo do canal..." << std::endl;
+}
+
+// Comando para enviar uma mensagem no canal
+void Sistema::enviarMensagem(std::vector<std::string> parametros)
+{
+    // Verifica se o número de parametros do comando foi digitado corretamente
+    if (parametros.size() < 1)
+    {
+        std::cout << std::endl;
+        std::cout << " Comando invalido" << std::endl;
+
+        return;
+    }
+
+    // Distribui o parametro do comando em uma variável
+    std::string mensagem = parametros[0];
+
+    // Define o servidor atual do usuário logado
+    std::string nomeServidor = usuarioLogado.getServidorAtual();
+
+    // Verifica se existe algum usuário logado
+    if (usuarioLogado.getEmail() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Nenhum usuario logado" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está visualizando algum servidor
+    if (usuarioLogado.getServidorAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta visualizando nenhum servidor" << std::endl;
+
+        return;
+    }
+
+    // Verifica se o usuário está em algum canal
+    if (usuarioLogado.getCanalAtual() == "")
+    {
+        std::cout << std::endl;
+        std::cout << " Voce nao esta em nenhum canal" << std::endl;
+
+        return;
+    }
+
+    // Obtém a data e hora atual
+    auto agora = std::chrono::system_clock::now();
+    std::time_t tempo = std::chrono::system_clock::to_time_t(agora);
+
+    // Converte a data e hora para uma string
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&tempo), "%Y-%m-%d %H:%M:%S");
+    std::string dataHora = ss.str();
+
+    // Cria a mensagem com os dados obtidos
+    Mensagem m(usuarioLogado.getId(), dataHora, mensagem);
+
+    // Adiciona a mensagem na lista de mensagens do canal atual
+    for (auto& s : servidores)
+    {
+        if (s.getNome() == nomeServidor)
+        {
+            Canal* c = s.getCanal(usuarioLogado.getCanalAtual());
+            c -> adicionarMensagem(m);
+        }
+    }
+
+    // Exibe mensagem de sucesso
+    std::cout << std::endl;
+    std::cout << " Mensagem enviada" << std::endl;
 }
 
 // Getters - usuarios

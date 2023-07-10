@@ -14,6 +14,7 @@ class Usuario
         std::string senha;
         std::string nome;
         std::string servidorAtual;
+        std::string canalAtual;
 
     public:
 
@@ -27,6 +28,7 @@ class Usuario
         std::string getEmail();
         std::string getSenha();
         std::string getServidorAtual();
+        std::string getCanalAtual();
 
         // Setters
         void setId(int id_m);
@@ -34,6 +36,7 @@ class Usuario
         void setEmail(std::string email_m);
         void setSenha(std::string senha_m);
         void setServidorAtual(std::string servidorAtual_m);
+        void setCanalAtual(std::string canalAtual_m);
 };
 
 #endif

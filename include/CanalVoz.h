@@ -9,6 +9,7 @@ class CanalVoz : public Canal
     private:
         
         Mensagem ultimaMensagem;
+        int tipo;
     
     public:
 

@@ -1,12 +1,18 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <iostream>
+
+#include "Mensagem.h"
 
 class Canal
 {
     private:
 
         std::string nome;
+        int tipo;
+        std::vector<Mensagem> mensagens;
 
     public:
 
@@ -15,7 +21,11 @@ class Canal
 
         // Getters 
         std::string getNome();
+        int getTipo();
 
         // Setters
         void setNome(std::string nome_m);
+
+        // Métodos
+        void adicionarMensagem(Mensagem mensagem_m);
 };

@@ -6,6 +6,8 @@
 #include <iostream>
 #include <iterator>
 #include <sstream>
+#include <chrono>
+#include <iomanip>
 
 #include "Usuario.h"
 #include "Servidor.h"
@@ -51,6 +53,15 @@ class Sistema
         void entrarServidor(std::vector<std::string> parametros);
         void desconectarDoServidor();
         void listarParticipantes();
+
+        // (B1) Comandos - Gestão de canais (Se tiver entrado no servidor)
+        void listarCanais();
+        void criarCanal(std::vector<std::string> parametros);
+        void entrarCanal(std::vector<std::string> parametros);
+        void sairCanal();
+
+        // (B2) Comandos - Gestão de mensagens (se tiver entrado no servidor e em algum canal)
+        void enviarMensagem(std::vector<std::string> parametros);
 };
 
 #endif
