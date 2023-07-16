@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 # Nome do seu projeto
-project(concordo)
+project(concord)
 
 # Arquivos de origem
 set(SOURCES
@@ -28,6 +28,6 @@ if(MSVC)
 endif()
 
 # Cria executavel
-add_executable(concordo ${SOURCES})
+add_executable(concord ${SOURCES})
 
 
