@@ -52,7 +52,7 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	<br>
 	Cria um novo usuário no sistema recebendo como parâmetro email, senha e nome. 
 	Cada usuário é único, tentar criar um usuário com o mesmo email / senha de outro 
-	resultará em erro, assim como a falta de algum desses parâmetros.
+	resultará em erro, assim como a falta de algum desses parâmetros.<br><br>
 	
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo
 	Usuário criado
