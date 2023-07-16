@@ -63,8 +63,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	Usuário já existe!
 </details>
 
-<br>
-
 <details>
 	<summary>login</summary>
 	<br>
@@ -77,8 +75,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	login julio.melo@imd.ufrn.br 1326
 	“Senha ou usuário inválidos!”
 </details>
-
-<br>
 
 <details>
 	<summary>login</summary>
