@@ -47,6 +47,8 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 
 <br>
 
+<h3>A1 - Se não estiver logado (Assim que entra no sistema)</h3>
+
 <details>
 	<summary>create-user</summary>
 	<br>
@@ -56,8 +58,24 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo
 	Usuário criado
+ 
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Silva
 	Usuário já existe!
+</details>
+
+<br>
+
+<details>
+	<summary>login</summary>
+	<br>
+	Esse procedimento verifica se já existe um usuário no cadastro geral com esse e-mail e
+	senha digitados. Se existir, então o usuário efetuou o login com sucesso.<br><br>
+	
+	login julio.melo@imd.ufrn.br 12ab34cd
+	“Logado como julio.melo@imd.ufrn.br”
+ 
+	login julio.melo@imd.ufrn.br 1326
+	“Senha ou usuário inválidos!”
 </details>
 
 <br>
