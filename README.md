@@ -45,8 +45,6 @@ o programa.</p>
 <p>Como mencionado antes, o programa funciona baseado em comandos de terminal
 criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções:</p>
 
-<br>
-
 <h3>A1 - Se não estiver logado (Assim que entra no sistema)</h3>
 
 <details>
