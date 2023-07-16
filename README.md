@@ -87,21 +87,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 <h3>A2 - Interações básicas com Servidores (Se estiver logado)</h3>
 
 <details>
-	<summary>create-user</summary>
-	<br>
-	Desconecta o usuário atual, ou seja, altera a variável que você criou que armazena o
-	usuário atualmente logado. O sistema continua executando, mas é necessário que seja feito
-	login novamente para que o restante dos comandos (com exceção de create-user) sejam
-	executados corretamente novamente.<br><br>
-	
-	disconnect
-	Desconectando usuário julio.melo@imd.ufrn.br
- 
-	disconnect
-	Não está conectado
-</details>
-
-<details>
 	<summary>disconnect</summary>
 	<br>
 	Desconecta o usuário atual, ou seja, altera a variável que você criou que armazena o
@@ -117,7 +102,7 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 </details>
 
 <details>
-	<summary>disconnect</summary>
+	<summary>create-server</summary>
 	<br>
 	Cria um novo servidor passando o nome dele.
 	O comando create-server <nome-do-servidor> cria um novo servidor se ele não
