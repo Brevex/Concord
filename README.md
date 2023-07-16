@@ -50,18 +50,18 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 <details>
 	<summary>create-user</summary>
 
-	<p>Cria um novo usuário no sistema recebendo como parâmetro email, senha e nome. 
+	Cria um novo usuário no sistema recebendo como parâmetro email, senha e nome. 
 	Cada usuário é único, tentar criar um usuário com o mesmo email / senha de outro 
-	resultará em erro, assim como a falta de algum desses parâmetros.</p>
+	resultará em erro, assim como a falta de algum desses parâmetros.
 
 	<br>
 
-	<p>Exemplo de entrada/saída:</p>
+	Exemplo de entrada/saída:
 
 	<br>
 
-	<p>create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo</p>
-	<p>Usuário criado</p>
-	<p>create-user julio.melo@imd.ufrn.br 12ab34cd Julio Silva</p>
-	<p>Usuário já existe!</p>
+	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo
+	Usuário criado
+	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Silva
+	Usuário já existe!
 </details>
