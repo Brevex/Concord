@@ -51,7 +51,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	<summary>create-user</summary>
 	<br>
 	Exemplo de entrada/saída:
- 	<br>
 	
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo
 	Usuário criado
