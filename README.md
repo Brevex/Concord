@@ -89,7 +89,7 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 <details>
 	<summary>disconnect</summary>
 	<br>
-	Desconecta o usuário atual, ou seja, altera a variável que você criou que armazena o
+	Desconecta o usuário atual, ou seja, altera a variável que armazena o
 	usuário atualmente logado. O sistema continua executando, mas é necessário que seja feito
 	login novamente para que o restante dos comandos (com exceção de create-user) sejam
 	executados corretamente novamente.<br><br>
@@ -113,4 +113,19 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
  
 	create-server minha-casa
 	Servidor com esse nome já existe
+</details>
+
+<details>
+	<summary>set-server-desc</summary>
+	<br>
+	Muda a descrição de um servidor já criado. Deve ser verificado se o servidor que você está tentando mudar a descrição é seu.<br><br>
+	
+	set-server-desc minha-casa “Este servidor serve como minha casa, sempre estarei nele”
+	Descrição do servidor ‘minha-casa’ modificada!
+ 
+	set-server-desc minha-casa2 “Este servidor serve como minha casa, sempre estarei nele”
+	Servidor ‘minha-casa2’ não existe
+
+ 	set-server-desc minha-casa55 “Trocando a descrição de servidor dos outros”
+  	Você não pode alterar a descrição de um servidor que não foi criado por você
 </details>
