@@ -129,3 +129,59 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
  	set-server-desc minha-casa55 “Trocando a descrição de servidor dos outros”
   	Você não pode alterar a descrição de um servidor que não foi criado por você
 </details>
+
+<details>
+	<summary>set-server-invite-code</summary>
+	<br>
+	Muda o código de convite de um servidor. Se você utilizar o comando sem nenhum código, então o servidor muda seu código para "" e
+	fica liberado para qualquer pessoa entrar. Por padrão os servers não tem código de convite. Deve ser verificado se o servidor que você está 	tentando mudar o código de convite é seu.<br><br>
+	
+	set-server-invite-code minha-casa 4567
+	Código de convite do servidor 'minha-casa' modificado!
+ 
+	set-server-invite-code minha-casa
+	Código de convite do servidor 'minha-casa' removido!
+</details>
+
+<details>
+	<summary>list-servers</summary>
+	<br>
+	Exibe os nomes dos servidores no sistema, um por linha.<br><br>
+	
+	list-servers
+ 
+	minha-casa
+	minha-casa2
+	RPG-galera
+	Bate-papo
+</details>
+
+<details>
+	<summary>remove-server</summary>
+	<br>
+	Remove um servidor (informando o seu nome). Só pode ter sucesso na remoção se o dono do servidor for o usuário logado.<br><br>
+	
+	remove-server minha-casa
+	Servidor ‘minha-casa’ removido
+ 
+	remove-server minha-casa
+	Você não é o dono do servidor ‘minha-casa’
+
+ 	remove-server minha-casa3
+	Servidor ‘minha-casa3’ não encontrado
+</details>
+
+<details>
+	<summary>enter-server</summary>
+	<br>
+	Entra em um servidor. Se o servidor for aberto (não tiver código de convite), o ID do usuário é inserido na lista de participantes do 		servidor automaticamente. Se o servidor não for aberto, só deve adicionar como participante do servidor se o mesmo digitar o código 		correto. Se o usuário logado criou o servidor ele pode entrar nele sem código de convite, mesmo que o mesmo não seja aberto.<br><br>
+	
+	enter-server dotalovers
+	Entrou no servidor com sucesso
+ 
+	enter-server concordo-members
+	Servidor requer código de convite
+
+ 	enter-server concordo-members 123456
+	Entrou no servidor com sucesso
+</details>
