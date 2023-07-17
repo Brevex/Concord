@@ -299,4 +299,4 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 
 <br>
 
-<h3 align = "center"> By <a href = "www.linkedin.com/in/brenobdev">Breno</a>. </h3>
+<h3 align = "center"> By <a href = "https://www.linkedin.com/in/breno-barbosa-de-oliveira-810866275/" target = "_blank">Breno</a>. </h3>
