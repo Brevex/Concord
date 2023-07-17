@@ -10,7 +10,7 @@
 para a matéria Linguagem de Programação I. Se trata de um programa feito em 
 C++ que simula um chat via terminal. O programa funciona recebendo comandos
 que executam uma determinada função, como criar usuários, enviar mensagens, criar
-servidores, criar canais de etc.</p>
+servidores, criar canais e etc.</p>
 
 <br>
 
