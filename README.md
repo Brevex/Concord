@@ -68,10 +68,10 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	senha digitados. Se existir, então o usuário efetuou o login com sucesso.<br><br>
 	
 	login julio.melo@imd.ufrn.br 12ab34cd
-	“Logado como julio.melo@imd.ufrn.br”
+	Logado como julio.melo@imd.ufrn.br
  
 	login julio.melo@imd.ufrn.br 1326
-	“Senha ou usuário inválidos!”
+	Senha ou usuário inválidos!
 </details>
 
 <details>
@@ -81,7 +81,7 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	usuário.<br><br>
 	
 	quit
-	“Saindo do Concord”
+	Saindo do Concord
 </details>
 
 <h3>A2 - Interações básicas com Servidores (Se estiver logado)</h3>
