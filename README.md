@@ -267,3 +267,36 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	leave-channel
 	“Saindo do canal”
 </details>
+
+<h3>B2 - Gestão de mensagens (se tiver entrado no servidor e em algum canal)</h3>
+
+<details>
+	<summary>send-message</summary>
+	<br>
+	Cria uma mensagem e adiciona na lista de mensagens do canal atual.<br><br>
+	
+	send-message Oi pessoal alguém pode me ajudar?
+</details>
+
+<details>
+	<summary>list-messages</summary>
+	<br>
+	Lista todas as mensagens do canal.<br><br>
+	
+	list-messages
+ 
+	Julio<08/03/2021 - 11:53>: Assim não tem condições, como que a
+	galera vai conseguir terminar isso tudo em 3 semanas?
+ 
+	Isaac<08/03/2021 - 12:00>: Eles conseguem confio na galera
+ 
+	Renan<08/03/2021 - 12:00>: Semestre passado fizemos assim e
+	ninguém entregou :/
+
+ 	list-messages
+	Sem mensagens para exibir
+</details>
+
+<br>
+
+<h3 align = "center"> By <a href = "www.linkedin.com/in/brenobdev">Breno</a>. </h3>
