@@ -185,3 +185,30 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
  	enter-server concordo-members 123456
 	Entrou no servidor com sucesso
 </details>
+
+<details>
+	<summary>leave-server</summary>
+	<br>
+	Desconecta do servidor que o usuário está atualmente conectado. Repare que o usuário se mantém na lista de participantes. O registro de qual 	servidor o usuário está visualizando no momento (na classe Sistema) deve mudar para um valor que represente "nenhum".<br><br>
+	
+	leave-server
+	Saindo do servidor ‘minha-casa’
+ 
+	leave-server
+	Você não está visualizando nenhum servidor
+</details>
+
+<details>
+	<summary>list-participants</summary>
+	<br>
+	Exibe todos os usuários que estão no servidor que o usuário está atualmente conectado (somente o nome de cada).<br><br>
+	
+	list-participants
+ 
+	Tomé
+	Bebé
+	Nana
+	Jonas
+</details>
+
+<h3>B1 - Gestão de canais (se tiver entrado no servidor)</h3>
