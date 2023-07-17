@@ -47,8 +47,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 
 <h3>A1 - Se não estiver logado (Assim que entra no sistema)</h3>
 
-<br>
-
 <details>
 	<summary>create-user</summary>
 	<br>
@@ -87,8 +85,6 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 </details>
 
 <h3>A2 - Interações básicas com Servidores (Se estiver logado)</h3>
-
-<br>
 
 <details>
 	<summary>disconnect</summary>
