@@ -212,3 +212,58 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 </details>
 
 <h3>B1 - Gestão de canais (se tiver entrado no servidor)</h3>
+
+<details>
+	<summary>list-channels</summary>
+	<br>
+	Exibe todos os canais do servidor, mostrando primeiro os nomes dos canais de texto, em seguida os nomes dos canais de voz.<br><br>
+	
+	list-channels
+ 
+	#canais de texto
+	casa-de-mae-joana
+	aqui-nós-faz-o-trabalho
+ 
+	#canais de audio
+	Professor-Me-Ajude
+	Revolta-dos-Alunos
+</details>
+
+<details>
+	<summary>create-channel</summary>
+	<br>
+	Permite criar um canal no servidor informando seu nome e seu tipo (voz ou texto).<br><br>
+	
+	create-channel casa-de-mae-joana texto
+	Canal de texto ‘casa-de-mae-joana’ criado
+ 
+	create-channel casa-de-mae-joana2 voz
+	Canal de voz ‘casa-de-mae-joana2’ criado
+ 
+	create-channel casa-de-mae-joana2 voz
+	Canal de voz ‘casa-de-mae-joana2’ já existe!
+ 
+	create-channel casa-de-mae-joana texto
+	Canal de texto ‘casa-de-mae-joana’ já existe!
+</details>
+
+<details>
+	<summary>enter-channel</summary>
+	<br>
+	Entra em um canal presente na lista de canais do servidor.<br><br>
+	
+	enter-channel casa-de-mae-joana
+	Entrou no canal ‘casa-de-mae-joana’
+ 
+	enter-channel introspecção
+	Canal ‘introspecção’ não existe
+</details>
+
+<details>
+	<summary>leave-channel</summary>
+	<br>
+	Sai do canal, ou seja, seta a variável que guarda o canal atual do usuário logado como "" (nenhum).<br><br>
+	
+	leave-channel
+	“Saindo do canal”
+</details>
