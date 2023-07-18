@@ -265,7 +265,7 @@ criados exclusivamente para o Concord. Segue abaixo os comandos e suas funções
 	Sai do canal, ou seja, seta a variável que guarda o canal atual do usuário logado como "" (nenhum).<br><br>
 	
 	leave-channel
-	“Saindo do canal”
+	Saindo do canal
 </details>
 
 <h3>B2 - Gestão de mensagens (se tiver entrado no servidor e em algum canal)</h3>
