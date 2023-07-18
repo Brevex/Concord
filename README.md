@@ -27,7 +27,7 @@ o programa.</p>
 
 <br>
 
-<h2> &#128302; Tecnologias usadas </h2>
+<h2> &#128302; Tecnologias Usadas </h2>
 
 <br>
 
