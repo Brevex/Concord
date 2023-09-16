@@ -2,15 +2,14 @@
 
 <br>
 
-<h2> &#128269; Sobre o Projeto </h2>
+<h2> &#128269; About the project </h2>
 
 <br>
 
-<p> Projeto realizado durante o Bacharelado em Tecnologia da Informação (BTI) 
-para a matéria Linguagem de Programação I. Se trata de um programa feito em 
-C++ que simula um chat via terminal. O programa funciona recebendo comandos
-que executam uma determinada função, como criar usuários, enviar mensagens, criar
-servidores, criar canais e etc.</p>
+<p> Project carried out during the Bachelor of Information Technology (BTI)
+for the subject Programming Language I. This is a program made in C++ that simulates a chat via terminal. The program works by receiving commands
+that perform a certain function, such as creating users, sending messages, creating
+servers, create channels, etc.</p>
 
 <br>
 
