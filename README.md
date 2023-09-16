@@ -54,33 +54,32 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 	will result in an error, as will the lack of any of these parameters.<br><br>
 	
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Melo
-	Usuário criado
+	User created
  
 	create-user julio.melo@imd.ufrn.br 12ab34cd Julio Silva
-	Usuário já existe!
+	User already exists!
 </details>
 
 <details>
 	<summary>login</summary>
 	<br>
-	Esse procedimento verifica se já existe um usuário no cadastro geral com esse e-mail e
-	senha digitados. Se existir, então o usuário efetuou o login com sucesso.<br><br>
+	This procedure checks if there is already a user in the general register with that email and 
+	password entered. If it exists, then the user has logged in successfully.<br><br>
 	
 	login julio.melo@imd.ufrn.br 12ab34cd
-	Logado como julio.melo@imd.ufrn.br
+	Logged in as julio.melo@imd.ufrn.br
  
 	login julio.melo@imd.ufrn.br 1326
-	Senha ou usuário inválidos!
+	Invalid password or username!
 </details>
 
 <details>
 	<summary>quit</summary>
 	<br>
-	Fecha a aplicação, este comando pode ser executado a qualquer momento pelo
-	usuário.<br><br>
+	Close the application, this command can be executed at any time by user.<br><br>
 	
 	quit
-	Saindo do Concord
+	Leaving Concord
 </details>
 
 <h3>A2 - Interações básicas com Servidores (Se estiver logado)</h3>
