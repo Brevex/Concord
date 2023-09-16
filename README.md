@@ -82,63 +82,62 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 	Leaving Concord
 </details>
 
-<h3>A2 - Interações básicas com Servidores (Se estiver logado)</h3>
+<h3>A2 - Basic interactions with Servers (If logged in)</h3>
 
 <details>
 	<summary>disconnect</summary>
 	<br>
-	Desconecta o usuário atual, ou seja, altera a variável que armazena o
-	usuário atualmente logado. O sistema continua executando, mas é necessário que seja feito
-	login novamente para que o restante dos comandos (com exceção de create-user) sejam
-	executados corretamente novamente.<br><br>
+	Disconnects the current user, that is, changes the variable that stores the 
+	currently logged in user. The system continues to run, but it needs to be done 
+	login again so that the rest of the commands (with the exception of create-user) are 
+	performed correctly again.<br><br>
 	
 	disconnect
-	Desconectando usuário julio.melo@imd.ufrn.br
+	Disconnecting user julio.melo@imd.ufrn.br
  
 	disconnect
-	Não está conectado
+	Not connected
 </details>
 
 <details>
 	<summary>create-server</summary>
 	<br>
-	Cria um novo servidor passando o nome dele.
-	O comando create-server <nome-do-servidor> cria um novo servidor se ele não
-	existir com esse nome.<br><br>
+	Create a new server by passing its name. The create-server <server-name> command 
+	creates a new server if it is not exist under that name.<br><br>
 	
 	create-server minha-casa
-	Servidor criado
+	Server created
  
 	create-server minha-casa
-	Servidor com esse nome já existe
+	Server with that name already exists
 </details>
 
 <details>
 	<summary>set-server-desc</summary>
 	<br>
-	Muda a descrição de um servidor já criado. Deve ser verificado se o servidor que você está tentando mudar a descrição é seu.<br><br>
+	Changes the description of an already created server. It must be verified that the server you are trying to change the description is yours.<br><br>
 	
-	set-server-desc minha-casa “Este servidor serve como minha casa, sempre estarei nele”
-	Descrição do servidor ‘minha-casa’ modificada!
+	set-server-desc minha-casa “This server serves as my home, I will always be on it”
+	‘minha-casa’ server description modified!
  
-	set-server-desc minha-casa2 “Este servidor serve como minha casa, sempre estarei nele”
-	Servidor ‘minha-casa2’ não existe
+	set-server-desc minha-casa2 “This server serves as my home, I will always be on it”
+	Server ‘minha-casa2’ does not exist
 
- 	set-server-desc minha-casa55 “Trocando a descrição de servidor dos outros”
-  	Você não pode alterar a descrição de um servidor que não foi criado por você
+ 	set-server-desc minha-casa55 “Changing other people’s server descriptions”
+  	You cannot change the description of a server that you did not create
 </details>
 
 <details>
 	<summary>set-server-invite-code</summary>
 	<br>
-	Muda o código de convite de um servidor. Se você utilizar o comando sem nenhum código, então o servidor muda seu código para "" e
-	fica liberado para qualquer pessoa entrar. Por padrão os servers não tem código de convite. Deve ser verificado se o servidor que você está 	tentando mudar o código de convite é seu.<br><br>
+	Change a server's invite code. If you use the command without any code, then the server changes its code to "" and 
+	It is free for anyone to enter. By default, servers do not have an invitation code. It must be verified that the server you are trying to change the invitation code is yours.<br><br>
 	
 	set-server-invite-code minha-casa 4567
-	Código de convite do servidor 'minha-casa' modificado!
+	Modified 'minha-casa' server invitation code!
  
 	set-server-invite-code minha-casa
-	Código de convite do servidor 'minha-casa' removido!
+	'minha-casa' server invitation code removed!
 </details>
 
 <details>
