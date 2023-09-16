@@ -143,7 +143,7 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 <details>
 	<summary>list-servers</summary>
 	<br>
-	Exibe os nomes dos servidores no sistema, um por linha.<br><br>
+	Displays the names of servers in the system, one per line.<br><br>
 	
 	list-servers
  
@@ -156,49 +156,49 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 <details>
 	<summary>remove-server</summary>
 	<br>
-	Remove um servidor (informando o seu nome). Só pode ter sucesso na remoção se o dono do servidor for o usuário logado.<br><br>
+	Removes a server (entering its name). Removal can only be successful if the server owner is the logged in user.<br><br>
 	
 	remove-server minha-casa
-	Servidor ‘minha-casa’ removido
+	‘minha-casa’ server removed
  
 	remove-server minha-casa
-	Você não é o dono do servidor ‘minha-casa’
+	You are not the owner of the ‘minha-casa’ server
 
  	remove-server minha-casa3
-	Servidor ‘minha-casa3’ não encontrado
+	Server ‘minha-casa3’ not found
 </details>
 
 <details>
 	<summary>enter-server</summary>
 	<br>
-	Entra em um servidor. Se o servidor for aberto (não tiver código de convite), o ID do usuário é inserido na lista de participantes do 		servidor automaticamente. Se o servidor não for aberto, só deve adicionar como participante do servidor se o mesmo digitar o código 		correto. Se o usuário logado criou o servidor ele pode entrar nele sem código de convite, mesmo que o mesmo não seja aberto.<br><br>
+	Join a server. If the server is open (does not have an invitation code), the user ID is inserted into the server's participant list automatically. If the server is not open, you should only add the server as a participant if you enter the correct code. If the logged-in user created the server, he can enter it without an invitation code, even if it is not opened.<br><br>
 	
 	enter-server dotalovers
-	Entrou no servidor com sucesso
+	Successfully joined the server
  
 	enter-server concordo-members
-	Servidor requer código de convite
+	Server requires invitation code
 
  	enter-server concordo-members 123456
-	Entrou no servidor com sucesso
+	Successfully joined the server
 </details>
 
 <details>
 	<summary>leave-server</summary>
 	<br>
-	Desconecta do servidor que o usuário está atualmente conectado. Repare que o usuário se mantém na lista de participantes. O registro de qual 	servidor o usuário está visualizando no momento (na classe Sistema) deve mudar para um valor que represente "nenhum".<br><br>
+	Disconnects from the server the user is currently connected to. Notice that the user remains on the list of participants. The record of which server the user is currently viewing (in the System class) should change to a value that represents "none".<br><br>
 	
 	leave-server
-	Saindo do servidor ‘minha-casa’
+	Leaving the ‘minha-casa’ server
  
 	leave-server
-	Você não está visualizando nenhum servidor
+	You are not viewing any servers
 </details>
 
 <details>
 	<summary>list-participants</summary>
 	<br>
-	Exibe todos os usuários que estão no servidor que o usuário está atualmente conectado (somente o nome de cada).<br><br>
+	Displays all users that are on the server that the user is currently connected to (only the name of each).<br><br>
 	
 	list-participants
  
@@ -208,20 +208,20 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 	Jonas
 </details>
 
-<h3>B1 - Gestão de canais (se tiver entrado no servidor)</h3>
+<h3>B1 - Channel management (if you have logged into the server)</h3>
 
 <details>
 	<summary>list-channels</summary>
 	<br>
-	Exibe todos os canais do servidor, mostrando primeiro os nomes dos canais de texto, em seguida os nomes dos canais de voz.<br><br>
+	Displays all channels on the server, first showing the text channel names, then the voice channel names.<br><br>
 	
 	list-channels
  
-	#canais de texto
+	#text channels
 	casa-de-mae-joana
 	aqui-nós-faz-o-trabalho
  
-	#canais de audio
+	#audio channels
 	Professor-Me-Ajude
 	Revolta-dos-Alunos
 </details>
@@ -229,56 +229,56 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 <details>
 	<summary>create-channel</summary>
 	<br>
-	Permite criar um canal no servidor informando seu nome e seu tipo (voz ou texto).<br><br>
+	Allows you to create a channel on the server by entering its name and type (voice or text).<br><br>
 	
 	create-channel casa-de-mae-joana texto
-	Canal de texto ‘casa-de-mae-joana’ criado
+	Text channel ‘casa-de-mae-joana’ created
  
 	create-channel casa-de-mae-joana2 voz
-	Canal de voz ‘casa-de-mae-joana2’ criado
+	Voice channel ‘casa-de-mae-joana’ created
  
 	create-channel casa-de-mae-joana2 voz
-	Canal de voz ‘casa-de-mae-joana2’ já existe!
+	Voice channel ‘casa-de-mae-joana2’ already exists!
  
 	create-channel casa-de-mae-joana texto
-	Canal de texto ‘casa-de-mae-joana’ já existe!
+	Text channel ‘casa-de-mae-joana’ already exists!
 </details>
 
 <details>
 	<summary>enter-channel</summary>
 	<br>
-	Entra em um canal presente na lista de canais do servidor.<br><br>
+	Join a channel in the server's channel list.<br><br>
 	
 	enter-channel casa-de-mae-joana
-	Entrou no canal ‘casa-de-mae-joana’
+	Joined the channel ‘casa-de-mae-joana’
  
 	enter-channel introspecção
-	Canal ‘introspecção’ não existe
+	‘introspecção’ channel does not exist
 </details>
 
 <details>
 	<summary>leave-channel</summary>
 	<br>
-	Sai do canal, ou seja, seta a variável que guarda o canal atual do usuário logado como "" (nenhum).<br><br>
+	Leave the channel, that is, set the variable that stores the logged in user's current channel to "" (none).<br><br>
 	
 	leave-channel
-	Saindo do canal
+	Leaving the channel
 </details>
 
-<h3>B2 - Gestão de mensagens (se tiver entrado no servidor e em algum canal)</h3>
+<h3>B2 - Message management (if you have entered the server and a channel)</h3>
 
 <details>
 	<summary>send-message</summary>
 	<br>
-	Cria uma mensagem e adiciona na lista de mensagens do canal atual.<br><br>
+	Create a message and add it to the current channel's message list.<br><br>
 	
-	send-message Oi pessoal alguém pode me ajudar?
+	send-message Hi guys, can anyone help me?
 </details>
 
 <details>
 	<summary>list-messages</summary>
 	<br>
-	Lista todas as mensagens do canal.<br><br>
+	Lists all messages in the channel.<br><br>
 	
 	list-messages
  
@@ -291,7 +291,7 @@ created exclusively for Concord. Below are the commands and their functions:</p>
 	ninguém entregou :/
 
  	list-messages
-	Sem mensagens para exibir
+	No messages to display
 </details>
 
 <br>
