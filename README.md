@@ -6,8 +6,7 @@
 
 <br>
 
-<p> Project carried out during the Bachelor of Information Technology (BTI)
-for the subject Programming Language I. This is a program made in C++ that simulates a chat via terminal. The program works by receiving commands
+<p>A simple C++ program that simulates a chat via terminal. The program works by receiving commands
 that perform a certain function, such as creating users, sending messages, creating
 servers, create channels, etc.</p>
 
