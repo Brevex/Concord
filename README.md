@@ -14,16 +14,21 @@ servers, create channels, etc.</p>
 
 <h2> &#128296; Dependencies and Execution </h2>
 
+<ol>
+   <li>Download a C/C++ compiler</li>
+   <li>Download CMake</li>
+   <li>Configure CMake and the compiler on your machine</li>
+   <li>Download this project and open the terminal inside the <code>build</code> folder</li>
+   <li>With the terminal open, run in sequence the following commands:</li>
+</ol>
+
+ 	cmake..  
 <br>
 
-<p>To compile and run this program on your machine, you will need CMake and
-the code compiler for C/C++, which can be gcc or g++. To create the executable
-go to the "build" folder, right click and open the terminal
-inside that folder. With the terminal open, type "cmake.." and press enter, then
-type "make" and hit enter again. Finally, type "./concord" to run
-the program.</p>
-
+	make
 <br>
+
+	./concord
 
 <h2> &#128302; Technologies Used </h2>
 
